@@ -53,6 +53,80 @@ This documentation centralizes scattered project management knowledge, convertin
 2. Check **[Risk Management & Communication](octoacme-risks-and-communication.md)** for communication templates and escalation paths
 3. Reference specific project charters or roadmaps in individual project repositories
 
+## Quick Start Examples
+
+Need to get started right now? Here are real-world scenarios showing how OctoAcme processes work in practice:
+
+### Scenario 1: Launching a New Feature (Product Manager)
+
+**Situation**: Your team needs to ship a new user authentication feature.
+
+**Step-by-step**:
+1. **Week 1 - Initiation**: Create a one-pager with the problem (login friction), success metric (reduce login time by 40%), and 4-week timeline
+2. **Week 1 - Planning**: Kickoff with PM, developers, and QA. Break work into: auth backend API, UI components, security review, smoke tests. Estimate 3 weeks.
+3. **Weeks 2-3 - Execution**: Daily standups (15 min), weekly demos showing progress. Track in GitHub Projects board.
+4. **Week 4 - Release**: Pre-release checklist (security scan ✅, unit tests ✅, integration tests ✅). Deploy to staging, run smoke tests, then to production.
+5. **Week 5 - Retrospective**: Team discusses what went well (security review process), what to improve (testing coverage). Update docs if process changed.
+
+**Key Artifacts**: One-pager, Risk Register, PR checklist, Release notes
+
+---
+
+### Scenario 2: Managing a Project Blocker (Project Manager)
+
+**Situation**: Your team discovers a critical dependency on another team's API that's not ready.
+
+**What to do**:
+1. **Identify** (Daily Standup): Developer flags: "API integration blocked—Backend team hasn't released the endpoint."
+2. **Assess** (Same day): Add to Risk Register: Impact=High, Likelihood=Medium, Owner=You
+3. **Mitigate** (Today): Schedule emergency sync with Backend PM. Agree on: temp workaround (mock API) and revised delivery date (1 week delay).
+4. **Escalate** (If needed): If timeline slips beyond project deadline, escalate to Product Lead and sponsor with revised plan.
+5. **Monitor** (Weekly): Track in risk register. Check status each week until resolved.
+
+**Key Documents**: Risk Register, [Risk Management & Communication](octoacme-risks-and-communication.md)
+
+---
+
+### Scenario 3: Handling a Quality Issue Post-Release (Developer + QA)
+
+**Situation**: A bug is discovered in production 2 days after launch.
+
+**What to do**:
+1. **Triage** (Immediately): QA files a bug issue. Label as "production-critical". Assign to dev.
+2. **Fix & Test** (4 hours): Developer creates a small PR (≤50 lines). Runs unit tests + integration tests locally. Requests review.
+3. **Review** (2 hours): Another dev reviews, approves. PR merged.
+4. **Deploy** (30 min): Use rollback plan from Release guide. Deploy hotfix to staging. Smoke test. Deploy to production.
+5. **Communicate**: Update stakeholders: "Issue identified, fixed, and deployed. No customer impact."
+6. **Document** (Next day): In retrospective, discuss: "Why did we miss this in QA? Add scenario to test suite."
+
+**Key Documents**: [Execution & Tracking](octoacme-execution-and-tracking.md), [Release & Deployment](octoacme-release-and-deployment.md)
+
+---
+
+### Scenario 4: Onboarding a New Team Member (Any Role)
+
+**Situation**: A new developer joins the team mid-project.
+
+**First day**:
+- Read: [Project Management Overview](octoacme-project-management-overview.md) (15 min)
+- Read: [Roles & Personas](octoacme-roles-and-personas.md) to find your role description (5 min)
+- Read: [Execution & Tracking](octoacme-execution-and-tracking.md) to understand PR workflow and CI (15 min)
+
+**First week**:
+- Attend standup and weekly sync (observe)
+- Pair program with a teammate on a small issue
+- Create your first PR following the small PR guideline (≤400 lines)
+- Attend sprint planning to see how backlog items are prioritized
+
+**First month**:
+- Lead a code review
+- Contribute to retrospective with observations
+- Ask questions in team Discussions or issues—we value learning!
+
+**Key Documents**: All overview and execution docs
+
+---
+
 ## OctoAcme Approach at a Glance
 
 ### Core Principles
